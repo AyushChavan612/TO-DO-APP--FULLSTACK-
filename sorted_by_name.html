@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List - Sorted by Name</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="navbar-brand">To-Do List</div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul id="navbar-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sorted_by_date.html">Sorted by Date</a></li>
+            <li><a href="sorted_by_name.html">Sorted by Name</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signup.html">Signup</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h1>To-Do List - Sorted by Name</h1>
+        <div class="add-section">
+            <input type="text" id="new-todo" placeholder="Enter new to-do" />
+            <button id="add-todo">Add</button>
+        </div>
+        <ul id="todo-list"></ul>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            todos.sort((a, b) => a.name.localeCompare(b.name));
+            updateLocalStorage();
+            displayTodos();
+        });
+    </script>
+</body>
+
+</html>
